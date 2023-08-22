@@ -10,11 +10,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1692716922,
-        "narHash": "sha256-eJWxFtPBS7Kvy3VtqCrIriqp/tMEeCxnR1WP20JFkmM=",
+        "lastModified": 1692718304,
+        "narHash": "sha256-hcqsItKaEK6rR5G48xQt2YCo5vFy8euZFoeDaKec1mY=",
         "owner": "qaristote",
         "repo": "info",
-        "rev": "71d5ffbf4a1cd4b50ea87361b419d10964f2770b",
+        "rev": "740610635c7de5976fb16d3d82c7ecdeade1e0f9",
         "type": "github"
       },
       "original": {
