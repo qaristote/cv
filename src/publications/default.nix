@@ -1,10 +1,12 @@
-{ latex, data, lib, ... }:
-
-let
+{
+  latex,
+  data,
+  ...
+}: let
   publications = data.publications;
   publicationsBIB = builtins.toFile "publications.bib" (latex.lines
     (builtins.map (entry: entry.cite.biblatex)
-      (latex.sort.reverse.byPath [ "issued" "date-parts" ] publications)));
+      (latex.sort.reverse.byPath ["issued" "date-parts"] publications)));
 in {
   title = "Publications";
   priority = 30;
