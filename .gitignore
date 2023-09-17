@@ -1,7 +1,4 @@
-# Created by https://www.toptal.com/developers/gitignore/api/latex
-# Edit at https://www.toptal.com/developers/gitignore?templates=latex
-
-### LaTeX ###
+### LaTeX
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -304,14 +301,6 @@ TSWLatexianTemp*
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
 
-### LaTeX Patch ###
-# LIPIcs / OASIcs
-*.vtc
+### devenv
+.devenv/
 
-# glossaries
-*.glstex
-
-# End of https://www.toptal.com/developers/gitignore/api/latex
-
-### Nix ###
-result*
