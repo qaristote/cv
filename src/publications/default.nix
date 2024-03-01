@@ -3,7 +3,7 @@
   data,
   ...
 }: let
-  publications = data.publications;
+  publications = data.publications.all;
   publicationsBIB = builtins.toFile "publications.bib" (latex.lines
     (builtins.map (entry: entry.cite.biblatex)
       (latex.sort.reverse.byPath ["issued" "date-parts"] publications)));
