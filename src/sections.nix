@@ -17,5 +17,5 @@ in
     ./experience
     ./education
     ./languages
-    ./publications
+    ./research
   ]

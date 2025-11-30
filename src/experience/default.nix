@@ -4,7 +4,7 @@
   lib,
   ...
 }: let
-  experience = data.experience;
+  experience = data.experience.jobs;
 in {
   title = "Experience";
   priority = 0;
@@ -26,6 +26,6 @@ in {
           + lib.optionalString (item ? assets) (" "
             + cite
             (lib.concatStringsSep ","
-              (for (lib.filter (asset: asset.type == "Publications") assets)
+              (for (lib.filter (asset: asset.type == "Writings") assets)
                 (lib.getAttr "id"))))));
 }

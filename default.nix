@@ -24,15 +24,14 @@
       mkdir -p "$out" && cd $_
       ln -sT ${cv-tex} cv.tex
       ln -sT ${files} files
-      ln -sT ${noto-fonts-emoji}/share/fonts/noto fonts
+      ln -sT ${noto-fonts-color-emoji}/share/fonts/noto fonts
     '') {};
 
   latexDeps = tl: {
     inherit
       (tl)
       scheme-basic
-      biber
-      biblatex
+      citation-style-language
       latexmk
       luatex
       luatexbase
