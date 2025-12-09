@@ -1,22 +1,26 @@
 {
-  latex,
   data,
-  lib,
   ...
-}: let
+}:
+let
   addBibResource = name: ''
     \begin{filecontents*}{${name}.json}
     ${builtins.toJSON data.research."${name}"}
     \end{filecontents*}
     \addbibresource{${name}.json}
-    '';
-in {
+  '';
+in
+{
   title = "Research";
   priority = 30;
   extraHeader = ''
     \usepackage[style=ieee]{citation-style-language}
     \cslsetup{bib-item-sep = 8 pt plus 4 pt minus 2 pt}
-    '' + addBibResource "conferences" + addBibResource "journals" + addBibResource "misc" + addBibResource "reports";
+  ''
+  + addBibResource "conferences"
+  + addBibResource "journals"
+  + addBibResource "misc"
+  + addBibResource "reports";
   content = ''
     \nocite{*}
 
