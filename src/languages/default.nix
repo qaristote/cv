@@ -5,7 +5,13 @@
   ...
 }:
 let
-  languages = data.languages;
+  languages = data.languages ++ [
+    {
+      name = "German";
+      proficiency = "basic";
+      icon.shortcode = "flag-germany";
+    }
+  ];
   sortByProficiency = lib.sort (
     lang1: lang2:
     let
