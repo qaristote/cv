@@ -11,6 +11,11 @@ let
       proficiency = "basic";
       icon.shortcode = "flag-germany";
     }
+    {
+      name = "Japanese";
+      proficiency = "basic";
+      icon.shortcode = "flag-japan";
+    }
   ];
   sortByProficiency = lib.sort (
     lang1: lang2:
@@ -27,10 +32,22 @@ in
   extraHeader = ''
     \usepackage{emoji}
     \setemojifont{NotoColorEmoji.ttf}[Path=./fonts/]
+    \usepackage{multicol}
   '';
   content =
     with latex;
-    for (sortByProficiency languages) (
+    [
+      ''
+        \begin{multicols}{2}
+      ''
+    ]
+    ++ for (sortByProficiency languages) (
       lang: with lang; moderncv.cvline "${name} \\emoji{${icon.shortcode}}" proficiency
-    );
+    )
+    ++ [
+      ''
+        \end{multicols}
+        \newpage
+      ''
+    ];
 }

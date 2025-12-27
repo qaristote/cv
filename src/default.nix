@@ -17,7 +17,6 @@ lines [
   (moderncv.name name.first name.last)
   (moderncv.email email.personal)
   (moderncv.extrainfo (latex.url url))
-  (moderncv.photo { "" = "128pt"; } avatar)
   ""
   (document [
     (title institution.position)
