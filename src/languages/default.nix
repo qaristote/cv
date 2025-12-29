@@ -5,13 +5,6 @@
   ...
 }:
 let
-  languages = data.languages ++ [
-    {
-      name = "German";
-      proficiency = "basic";
-      icon.shortcode = "flag-germany";
-    }
-  ];
   sortByProficiency = lib.sort (
     lang1: lang2:
     let
@@ -27,10 +20,13 @@ in
   extraHeader = ''
     \usepackage{emoji}
     \setemojifont{NotoColorEmoji.ttf}[Path=./fonts/]
+    \usepackage{multicol}
   '';
   content =
     with latex;
-    for (sortByProficiency languages) (
-      lang: with lang; moderncv.cvline "${name} \\emoji{${icon.shortcode}}" proficiency
+    environmentWithOpts "multicols" [ "2" ] (
+      for (sortByProficiency data.languages) (
+        lang: with lang; moderncv.cvline "${name} \\emoji{${icon.shortcode}}" proficiency
+      )
     );
 }
