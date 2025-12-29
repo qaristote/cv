@@ -14,7 +14,8 @@ in
 builtins.map makeSection [
   ./experience
   ./education
+  ./research
   ./service
   ./languages
-  ./research
+  ./bibliography
 ]
