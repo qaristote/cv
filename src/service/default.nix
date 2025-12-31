@@ -9,7 +9,6 @@ let
 in
 {
   title = "Academic service";
-  priority = 2;
   content = [
     (
       with service.reviews;

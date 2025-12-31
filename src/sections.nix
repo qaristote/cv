@@ -5,8 +5,8 @@
 }:
 let
   sectionTemplate = section: {
-    inherit (section) title priority;
-    extraHeader = if section ? extraHeader then section.extraHeader else "";
+    inherit (section) title;
+    extraHeader = section.extraHeader or "";
     content = latex.section section.title section.content;
   };
   makeSection = path: sectionTemplate (make path { });
@@ -17,5 +17,13 @@ builtins.map makeSection [
   ./research
   ./service
   ./languages
-  ./bibliography
+]
+++ [
+  {
+    extraHeader = "";
+    content = ''
+      \newpage
+    '';
+  }
+  (makeSection ./bibliography)
 ]

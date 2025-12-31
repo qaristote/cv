@@ -6,7 +6,7 @@
 }:
 with latex;
 let
-  sections = sort.byKey "priority" (make ./sections.nix { });
+  sections = make ./sections.nix { };
 in
 with data.basics;
 lines [

@@ -12,7 +12,6 @@ let
 in
 {
   title = "Bibliography";
-  priority = 30;
   extraHeader = ''
     \usepackage[style=ieee]{citation-style-language}
     \cslsetup{bib-item-sep = 8 pt plus 4 pt minus 2 pt}

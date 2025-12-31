@@ -9,7 +9,6 @@ let
 in
 {
   title = "Experience";
-  priority = 15;
   content =
     with latex;
     for (sort.reverse.byFun (x: with x.date.start; day + 100 * month + 10000 * year) experience) (

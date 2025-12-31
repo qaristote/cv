@@ -16,7 +16,6 @@ let
 in
 {
   title = "Languages";
-  priority = 20;
   extraHeader = ''
     \usepackage{emoji}
     \setemojifont{NotoColorEmoji.ttf}[Path=./fonts/]
