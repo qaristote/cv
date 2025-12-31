@@ -19,7 +19,7 @@ in
         institution.location
         (
           if item ? supervisors then
-            "supervised by "
+            "with "
             + lib.concatStringsSep " \\& " (for supervisors (supervisor: with supervisor; href url name))
           else
             ""
