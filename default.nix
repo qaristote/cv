@@ -64,7 +64,7 @@ in
       }
       ''
         export HOME=$(pwd)
-        cp -r ${cv-src}/* -r .
+        cp --recursive ${cv-src}/* .
         latexmk -pdflua cv.tex
         mv cv.pdf "$out"
       ''

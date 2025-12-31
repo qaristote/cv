@@ -10,7 +10,6 @@ let
 in
 {
   title = "Education";
-  priority = 10;
   content =
     with latex;
     for (sortByStartDate education) (

@@ -9,7 +9,6 @@ let
 in
 {
   title = "Experience";
-  priority = 0;
   content =
     with latex;
     for (sort.reverse.byFun (x: with x.date.start; day + 100 * month + 10000 * year) experience) (
@@ -20,7 +19,7 @@ in
         institution.location
         (
           if item ? supervisors then
-            "supervised by "
+            "with "
             + lib.concatStringsSep " \\& " (for supervisors (supervisor: with supervisor; href url name))
           else
             ""

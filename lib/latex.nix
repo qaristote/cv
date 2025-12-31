@@ -47,9 +47,14 @@ let
     ${lines content}
     \end{${name}}
   '';
+  environmentWithOpts = name: args: content: ''
+    \begin{${name}}{${lib.concatStringsSep "}{" args}}
+    ${lines content}
+    \end{${name}}
+  '';
 
   latex = {
-    inherit macro environment;
+    inherit macro environment environmentWithOpts;
 
     comment = content: "% ${content}";
     document = environment "document";

@@ -9,7 +9,6 @@ let
 in
 {
   title = "Academic service";
-  priority = 15;
   content = [
     (
       with service.reviews;
@@ -18,7 +17,7 @@ in
           name: years: "${name} ${lib.concatMapStringsSep ", " builtins.toString years}"
         ) conferences.names;
       in
-      "I have reviewed ${builtins.toString conferences.number} conference papers (${conferenceList})."
+      "${builtins.toString conferences.number} conference papers reviews: ${conferenceList}. \\\\"
     )
     (
       with latex;
